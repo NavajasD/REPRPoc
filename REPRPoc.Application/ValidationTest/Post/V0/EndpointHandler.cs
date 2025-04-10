@@ -1,13 +1,13 @@
 ﻿using FastEndpoints;
 using Microsoft.AspNetCore.Http;
-namespace REPRPoc.Endpoints.Test.Get.V0
+namespace REPRPoc.Endpoints.ValidationTest.Post.V0
 {
     public class EndpointHandler : Endpoint<Request, Response>
     {
         public override void Configure()
         {
-            Get("/test");
-            AllowAnonymous();
+            Post("/validationtest");
+            Roles("Manager");
         }
 
         public override async Task HandleAsync(Request req, CancellationToken ct)

@@ -6,7 +6,7 @@ namespace REPRPoc.Endpoints.Test.Get.V1
     {
         public override void Configure()
         {
-            Post("/test");
+            Get("/test");
             Version(1);
             AllowAnonymous();
         }

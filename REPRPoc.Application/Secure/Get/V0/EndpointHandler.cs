@@ -6,7 +6,7 @@ namespace REPRPoc.Endpoints.Secure.Get.V0
     {
         public override void Configure()
         {
-            Post("/secure");
+            Get("/secure");
             Roles("Manager");
         }
 

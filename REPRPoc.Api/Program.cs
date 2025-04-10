@@ -1,3 +1,4 @@
+global using FluentValidation;
 using REPRPoc.Api.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
