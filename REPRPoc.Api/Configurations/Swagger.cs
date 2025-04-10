@@ -1,4 +1,6 @@
 ﻿using FastEndpoints.Swagger;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using NSwag;
 
 namespace REPRPoc.Api.Configurations
 {

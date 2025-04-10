@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REPRPoc.Api", "REPRPoc.Api\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REPRPoc.Endpoints", "REPRPoc.Application\REPRPoc.Endpoints.csproj", "{1A04A646-CE3D-4537-B314-87C2A7CF92E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REPRPoc.Contracts", "REPRPoc.Contracts\REPRPoc.Contracts.csproj", "{3F8FA59E-27DC-4B4D-B05F-5A0EFE67968D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REPRPoc.AuthenticationDummy", "REPRPoc.AuthenticationDummy\REPRPoc.AuthenticationDummy.csproj", "{3F4DB37A-A8F4-4D3A-A026-DB38365CABD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{1A04A646-CE3D-4537-B314-87C2A7CF92E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A04A646-CE3D-4537-B314-87C2A7CF92E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A04A646-CE3D-4537-B314-87C2A7CF92E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F8FA59E-27DC-4B4D-B05F-5A0EFE67968D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F8FA59E-27DC-4B4D-B05F-5A0EFE67968D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F8FA59E-27DC-4B4D-B05F-5A0EFE67968D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F8FA59E-27DC-4B4D-B05F-5A0EFE67968D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F4DB37A-A8F4-4D3A-A026-DB38365CABD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F4DB37A-A8F4-4D3A-A026-DB38365CABD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F4DB37A-A8F4-4D3A-A026-DB38365CABD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F4DB37A-A8F4-4D3A-A026-DB38365CABD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
