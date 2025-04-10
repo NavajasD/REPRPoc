@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\REPRPoc.Application\REPRPoc.Endpoints.csproj" />
     <ProjectReference Include="..\REPRPoc.AuthenticationDummy\REPRPoc.AuthenticationDummy.csproj" />
+    <ProjectReference Include="..\REPRPoc.Endpoints\REPRPoc.Endpoints.csproj" />
   </ItemGroup>
 
 </Project>
