@@ -7,7 +7,8 @@ builder.Services.ConfigureSecurity(builder.Configuration);
 builder.Services.ConfigureFastEndpoints();
 builder.Services.ConfigureSwagger();
 builder.Services.ConfigureServices();
-
+builder.Services.ConfigureDatabase(builder.Configuration);
+builder.Services.ConfigureRepositories();
 
 var app = builder.Build();
 
