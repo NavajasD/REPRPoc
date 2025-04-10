@@ -2,12 +2,7 @@
 using REPRPoc.Contracts.Persistance;
 using REPRPoc.Contracts.Persistance.Repositories;
 using REPRPoc.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace REPRPoc.Persistance.Repositories
 {
@@ -22,8 +17,10 @@ namespace REPRPoc.Persistance.Repositories
 
         public IUnitOfWork UnitOfWork => databaseContext;
 
-        public async Task AddAsync(T entity, CancellationToken cancellationToken = default)
+        public async Task AddAsync(T entity, Guid createdBy, CancellationToken cancellationToken = default)
         {
+            entity.Created = DateTime.UtcNow;
+            entity.LastModifiedBy = createdBy;
             await databaseContext.AddAsync(entity, cancellationToken);
         }
         public async Task<IEnumerable<T>> SearchAsync(Expression<Func<T, bool>>? predicate = null, CancellationToken cancellationToken = default)
@@ -43,8 +40,10 @@ namespace REPRPoc.Persistance.Repositories
         {
             databaseContext.Remove(entity);
         }
-        public void Update(T entity)
+        public void Update(T entity, Guid modifiedBy)
         {
+            entity.LastModified = DateTime.UtcNow;
+            entity.LastModifiedBy = modifiedBy;
             databaseContext.Update(entity);
         }
     }

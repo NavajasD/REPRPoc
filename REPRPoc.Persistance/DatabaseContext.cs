@@ -14,6 +14,9 @@ namespace REPRPoc.Persistance
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.ConfigureEntities();
+            modelBuilder.SeedEntities();
         }
     }
 }
