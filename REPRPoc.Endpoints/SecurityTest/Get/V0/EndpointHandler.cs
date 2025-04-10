@@ -1,12 +1,12 @@
 ﻿using FastEndpoints;
 using Microsoft.AspNetCore.Http;
-namespace REPRPoc.Endpoints.Secure.Get.V0
+namespace REPRPoc.Endpoints.SecurityTest.Get.V0
 {
     public class EndpointHandler : Endpoint<Request, Response>
     {
         public override void Configure()
         {
-            Get("/secure");
+            Get("/securitytest");
             Roles("Manager");
         }
 

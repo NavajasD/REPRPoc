@@ -1,4 +1,4 @@
-﻿namespace REPRPoc.Endpoints.Secure.Get.V0
+﻿namespace REPRPoc.Endpoints.SecurityTest.Get.V0
 {
     public class Response
     {
