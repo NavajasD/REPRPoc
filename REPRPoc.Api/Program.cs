@@ -19,6 +19,7 @@ app.UseSecurity();
 app.UseFastEndpoints();
 app.UseSwagger();
 
+
 app.Run();
 
 

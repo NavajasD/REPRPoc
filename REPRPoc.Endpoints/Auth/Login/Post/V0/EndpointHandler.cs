@@ -33,7 +33,7 @@ namespace REPRPoc.Endpoints.Auth.Login.Post.V0
                         o.ExpireAt = DateTime.UtcNow.AddDays(1);
                         o.User.Roles.Add("Manager", "Auditor");
                         o.User.Claims.Add(("UserName", req.Username));
-                        o.User["UserId"] = "001";
+                        o.User.Claims.Add(("UserId", "71f94b6f-696c-4d10-9494-7185b7dba713"));
                     });
 
                 await SendResultAsync(Results.Ok(new Response

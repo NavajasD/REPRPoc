@@ -7,6 +7,8 @@ services:
     build:
       context: .
       dockerfile: REPRPoc.Api/Dockerfile
+    environment:
+        - ConnectionStrings__DefaultConnection=User ID=postgres;Password=postgres;Server=db;Port=5432;Database=repr_poc_db;Pooling=true;
 
   db:
     image: postgres

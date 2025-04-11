@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REPRPoc.Entities", "REPRPoc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REPRPoc.EntitySeeds", "REPRPoc.EntitySeeds\REPRPoc.EntitySeeds.csproj", "{C652B59C-8E1C-4A56-847D-7D51909168CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REPRPoc.Dtos", "REPRPoc.Dtos\REPRPoc.Dtos.csproj", "{88213F06-9612-5E41-121A-F00B9EAA124F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{C652B59C-8E1C-4A56-847D-7D51909168CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C652B59C-8E1C-4A56-847D-7D51909168CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C652B59C-8E1C-4A56-847D-7D51909168CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88213F06-9612-5E41-121A-F00B9EAA124F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88213F06-9612-5E41-121A-F00B9EAA124F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88213F06-9612-5E41-121A-F00B9EAA124F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88213F06-9612-5E41-121A-F00B9EAA124F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

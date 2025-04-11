@@ -1,4 +1,5 @@
-﻿using REPRPoc.Contracts.Persistance.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using REPRPoc.Contracts.Persistance.Repositories;
 using REPRPoc.Entities;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,25 @@ namespace REPRPoc.Persistance.Repositories
     {
         public CarRepository(DatabaseContext databaseContext) : base(databaseContext)
         {
+        }
+
+        public async Task<IEnumerable<Car>> SearchCarsAsync(string? plate = null, string? maker = null, string? model = null, string? color = null, CancellationToken cancellationToken = default)
+        {
+            var cars = databaseContext.Cars.AsNoTracking();
+
+            if (plate is not null)
+                return await cars.Where(c => c.Plate == plate).ToListAsync(cancellationToken);
+
+            if (maker is not null)
+                cars = cars.Where(c => c.Maker.ToLower().Contains(maker.ToLower()));
+
+            if (model is not null)
+                cars = cars.Where(c => c.Model.ToLower().Contains(model.ToLower()));
+
+            if (color is not null)
+                cars = cars.Where(c => c.Color.ToLower().Contains(color.ToLower()));
+
+            return await cars.ToListAsync(cancellationToken);
         }
     }
 }

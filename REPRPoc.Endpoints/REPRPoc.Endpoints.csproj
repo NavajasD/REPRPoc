@@ -13,13 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\REPRPoc.Contracts\REPRPoc.Contracts.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Car\Delete\" />
-    <Folder Include="Car\Get\" />
-    <Folder Include="Car\Put\" />
-    <Folder Include="Car\Post\" />
+    <ProjectReference Include="..\REPRPoc.Dtos\REPRPoc.Dtos.csproj" />
   </ItemGroup>
 
 </Project>

@@ -8,7 +8,7 @@ namespace REPRPoc.Persistance.Repositories
 {
     public abstract class Repository<T> : IRepository<T> where T : BaseEntity
     {
-        private readonly DatabaseContext databaseContext;
+        protected readonly DatabaseContext databaseContext;
 
         protected Repository(DatabaseContext databaseContext)
         {
@@ -44,6 +44,19 @@ namespace REPRPoc.Persistance.Repositories
         {
             entity.LastModified = DateTime.UtcNow;
             entity.LastModifiedBy = modifiedBy;
+            databaseContext.Update(entity);
+        }
+
+        public async Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default)
+        {
+            return await databaseContext.Set<T>().AnyAsync(predicate, cancellationToken);
+        }
+
+        public void SoftDelete(T entity, Guid modifiedBy)
+        {
+            entity.LastModified = DateTime.UtcNow;
+            entity.LastModifiedBy = modifiedBy;
+            entity.IsDeleted = true;
             databaseContext.Update(entity);
         }
     }
