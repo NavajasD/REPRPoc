@@ -37,6 +37,9 @@ namespace REPRPoc.Persistance.EntityConfiguration
             builder.Property(c => c.Color)
                 .HasMaxLength(255)
                 .IsRequired();
+
+            builder.HasIndex(c => c.Plate)
+                .IsUnique();
         }
     }
 }
