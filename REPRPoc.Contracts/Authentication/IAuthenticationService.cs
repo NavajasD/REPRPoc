@@ -8,6 +8,6 @@ namespace REPRPoc.Contracts.Authentication
 {
     public interface IAuthenticationService
     {
-        Task<bool> CredentialsAreValid(string username, string password, CancellationToken ct);
+        Task<Guid?> CredentialsAreValid(string username, string password, CancellationToken ct = default);
     }
 }

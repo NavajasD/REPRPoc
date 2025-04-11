@@ -4,9 +4,9 @@ namespace REPRPoc.AuthenticationDummy
 {
     public class AuthenticationService : IAuthenticationService
     {
-        public async Task<bool> CredentialsAreValid(string username, string password, CancellationToken ct)
+        public async Task<Guid?> CredentialsAreValid(string username, string password, CancellationToken ct)
         {
-            return true;
+            return Guid.Parse("71f94b6f-696c-4d10-9494-7185b7dba713");
         }
     }
 }

@@ -24,7 +24,8 @@ namespace REPRPoc.Endpoints.Auth.Login.Post.V0
 
         public override async Task HandleAsync(Request req, CancellationToken ct)
         {
-            if (await authService.CredentialsAreValid(req.Username, req.Password, ct))
+            var userId = await authService.CredentialsAreValid(req.Username, req.Password, ct);
+            if (userId is not null)
             {
                 var jwtToken = JwtBearer.CreateToken(
                     o =>
@@ -33,7 +34,7 @@ namespace REPRPoc.Endpoints.Auth.Login.Post.V0
                         o.ExpireAt = DateTime.UtcNow.AddDays(1);
                         o.User.Roles.Add("Manager", "Auditor");
                         o.User.Claims.Add(("UserName", req.Username));
-                        o.User.Claims.Add(("UserId", "71f94b6f-696c-4d10-9494-7185b7dba713"));
+                        o.User.Claims.Add(("UserId", userId.Value.ToString()));
                     });
 
                 await SendResultAsync(Results.Ok(new Response
