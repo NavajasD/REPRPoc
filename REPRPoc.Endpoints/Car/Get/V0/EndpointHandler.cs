@@ -20,7 +20,7 @@ namespace REPRPoc.Endpoints.Car.Get.V0
 
         public override async Task HandleAsync(Request req, CancellationToken ct)
         {
-            var car = await carRepository.FirstOrDefaultAsync(c => c.Id == req.CarId, ct);
+            var car = await carRepository.FirstOrDefaultAsync(c => c.Id == req.CarId && !c.IsDeleted, ct);
 
             if (car is null)
             {
