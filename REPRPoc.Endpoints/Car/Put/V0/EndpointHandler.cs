@@ -1,6 +1,7 @@
 ﻿using FastEndpoints;
 using Microsoft.AspNetCore.Http;
 using REPRPoc.Contracts.Persistance.Repositories;
+using REPRPoc.Endpoints.PreProcessors;
 namespace REPRPoc.Endpoints.Car.Put.V0
 {
     public class EndpointHandler : Endpoint<Request, Response, CarMapper>
@@ -15,6 +16,7 @@ namespace REPRPoc.Endpoints.Car.Put.V0
         {
             Put("/car");
             Roles("Manager");
+            PreProcessor<RequestLogger<Request>>();
         }
 
         public override async Task HandleAsync(Request req, CancellationToken ct)
@@ -38,7 +40,10 @@ namespace REPRPoc.Endpoints.Car.Put.V0
                 return;
             }
             
-            car = Map.ToEntity(req.Car);
+            car.Plate = req.Car.Plate;
+            car.Maker = req.Car.Maker;
+            car.Model = req.Car.Model;
+            car.Color = req.Car.Color;
 
             carRepository.Update(car, req.UserId);
             await carRepository.UnitOfWork.SaveChangesAsync(ct);

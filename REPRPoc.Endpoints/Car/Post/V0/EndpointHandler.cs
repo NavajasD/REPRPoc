@@ -1,6 +1,7 @@
 ﻿using FastEndpoints;
 using Microsoft.AspNetCore.Http;
 using REPRPoc.Contracts.Persistance.Repositories;
+using REPRPoc.Endpoints.PreProcessors;
 namespace REPRPoc.Endpoints.Car.Post.V0
 {
     public class EndpointHandler : Endpoint<Request, Response, CarMapper>
@@ -15,6 +16,7 @@ namespace REPRPoc.Endpoints.Car.Post.V0
         {
             Post("/car");
             Roles("Manager");
+            PreProcessor<RequestLogger<Request>>();
         }
 
         public override async Task HandleAsync(Request req, CancellationToken ct)
