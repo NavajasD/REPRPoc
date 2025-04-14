@@ -9,9 +9,10 @@ namespace REPRPoc.Api.Configurations
     {
         public static IServiceCollection ConfigureDatabase(this IServiceCollection services, IConfiguration configuration)
         {
+            var connectionString = configuration.GetConnectionString("DefaultConnection") ?? throw new Exception("Connection string 'DefaultConnection' not found.");
             services.AddDbContext<DatabaseContext>(op =>
             {
-                op.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
+                op.UseNpgsql(connectionString);
             });
 
             return services;

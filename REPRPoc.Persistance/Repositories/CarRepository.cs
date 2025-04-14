@@ -18,6 +18,7 @@ namespace REPRPoc.Persistance.Repositories
         public async Task<IEnumerable<Car>> SearchCarsAsync(string? plate = null, string? maker = null, string? model = null, string? color = null, CancellationToken cancellationToken = default)
         {
             var cars = databaseContext.Cars.AsNoTracking();
+            cars = cars.Where(c => !c.IsDeleted);
 
             if (plate is not null)
                 return await cars.Where(c => c.Plate == plate).ToListAsync(cancellationToken);

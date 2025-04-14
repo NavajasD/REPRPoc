@@ -11,6 +11,9 @@ builder.Services.ConfigureRepositories();
 builder.Services.ConfigureCache();
 
 builder.Services.ConfigureFastEndpoints();
+
+builder.Host.ConfigureLogging();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
