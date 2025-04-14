@@ -1,6 +1,5 @@
-@REPRPoc.Api_HostAddress = http://localhost:5153
+@REPRPoc.Api_HostAddress = https://localhost:53334
 
-GET {{REPRPoc.Api_HostAddress}}/weatherforecast/
+GET {{REPRPoc.Api_HostAddress}}/api/car/
 Accept: application/json
-
 ###

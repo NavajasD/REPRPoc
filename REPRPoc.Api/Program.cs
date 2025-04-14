@@ -4,22 +4,23 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.ConfigureSecurity(builder.Configuration);
-builder.Services.ConfigureFastEndpoints();
 builder.Services.ConfigureSwagger();
 builder.Services.ConfigureServices();
 builder.Services.ConfigureDatabase(builder.Configuration);
 builder.Services.ConfigureRepositories();
+builder.Services.ConfigureCache();
 
+builder.Services.ConfigureFastEndpoints();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
 app.UseSecurity();
-app.UseFastEndpoints();
 app.UseSwagger();
+app.UseCache();
 
-
+app.UseFastEndpoints();
 app.Run();
 
 

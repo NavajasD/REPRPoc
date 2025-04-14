@@ -16,6 +16,7 @@ namespace REPRPoc.Endpoints.Car.Search.V0
         {
             Get("/car");
             AllowAnonymous();
+            ResponseCache(60);
         }
 
         public override async Task HandleAsync(Request req, CancellationToken ct)
